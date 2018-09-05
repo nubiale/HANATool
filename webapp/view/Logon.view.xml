@@ -1,0 +1,64 @@
+<mvc:View 
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+	controllerName="com.sap.ui.hanatool.controller.Logon" 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"	
+	xmlns:form="sap.ui.layout.form">
+	
+			<Page showHeader="true" title="Katalyst Assessment Tool" showFooter="true" showNavButton="false">
+				<content>
+
+					<form:Form width="auto" editable="true" visible="true">
+						
+						<form:formContainers>
+							<form:FormContainer visible="true">
+								<form:formElements>
+									<form:FormElement visible="true"></form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Image src="/webapp/resources/Katalyst_Logo.png" height="100px" width="200px" visible="true" densityAware="false"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="User" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="235px" valueHelpOnly="false" maxLength="0"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Password" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input type="Password" showValueHelp="false" enabled="true" visible="true" width="235px" valueHelpOnly="false" maxLength="0"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Button text="Log On" type="Default" iconFirst="true" width="235px" enabled="true" visible="true" iconDensityAware="false"
+																					press="onButtonPress" class="sapUiTinyMarginEnd"/>
+										</form:fields>
+									</form:FormElement>
+								</form:formElements>
+								<form:title/>
+							</form:FormContainer>
+						</form:formContainers>
+						<form:layout>
+							<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="5" columnsM="2" labelSpanM="5" labelSpanS="12"/>
+						</form:layout>
+					</form:Form>
+			
+				</content>
+			</Page>
+</mvc:View>

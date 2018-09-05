@@ -1,0 +1,83 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc" 
+	controllerName="com.sap.ui.hanatool.controller.Home" 
+	xmlns="sap.m"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<Page showHeader="true" title="Katalyst S/4HANA Assessment Tool" 
+		showFooter="false" 
+		showNavButton="false">
+		<content>
+			<GenericTile header="Functional Assessment" subheader="" frameType="TwoThirds" class="sapUiMediumMargin" press="_onGenericTilePress">
+				<tileContent>
+					<TileContent footer="" unit="">
+						<content/>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+			<GenericTile header="S/4 HANA Simplification Impact" subheader="" frameType="TwoThirds" class="sapUiMediumMargin"
+				press="_onGenericTilePress1">
+				<tileContent>
+					<TileContent footer="" unit="">
+						<content>
+							<microchart:HarveyBallMicroChart total="100" formattedLabel="false" size="S" width="144px" totalLabel="" totalScale="" showTotal="true"
+								showFractions="true">
+								<microchart:items>
+									<microchart:HarveyBallMicroChartItem color="Good" fraction="40" fractionLabel="" formattedLabel="false" fractionScale=""/>
+								</microchart:items>
+							</microchart:HarveyBallMicroChart>
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+			<GenericTile header="Custom Code Analysis" subheader="" frameType="TwoThirds" class="sapUiMediumMargin" press="_onGenericTilePress2">
+				<tileContent>
+					<TileContent footer="" unit="">
+						<content>
+							<microchart:ColumnMicroChart width="144px" height="73px" columns="{path:'/BuildingSet', templateShareable:true}">
+								<microchart:columns>
+									<microchart:ColumnMicroChartData value="{path: 'CleanCost2015', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}"
+										color="Error"/>
+								</microchart:columns>
+								<microchart:leftTopLabel>
+									<microchart:ColumnMicroChartLabel label="" color="Neutral"/>
+								</microchart:leftTopLabel>
+								<microchart:rightTopLabel>
+									<microchart:ColumnMicroChartLabel label="" color="Neutral"/>
+								</microchart:rightTopLabel>
+								<microchart:leftBottomLabel>
+									<microchart:ColumnMicroChartLabel label="" color="Neutral"/>
+								</microchart:leftBottomLabel>
+								<microchart:rightBottomLabel>
+									<microchart:ColumnMicroChartLabel label="" color="Neutral"/>
+								</microchart:rightBottomLabel>
+							</microchart:ColumnMicroChart>
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+			<GenericTile header="Technical Assessment" subheader="" frameType="TwoThirds" class="sapUiMediumMargin" press="_onGenericTilePress3">
+				<tileContent>
+					<TileContent footer="" unit="">
+						<content>
+							<microchart:StackedBarMicroChart size="S">
+								<microchart:bars>
+									<microchart:StackedBarMicroChartBar value="25" valueColor="Good"/>
+									<microchart:StackedBarMicroChartBar value="25" valueColor="Neutral"/>
+									<microchart:StackedBarMicroChartBar value="50" valueColor="Error"/>
+								</microchart:bars>
+							</microchart:StackedBarMicroChart>
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+		</content>
+		<footer/>
+		<headerContent>
+			<Image src="/webapp/resources/Katalyst_Logo.png" height="50px" width="124px" visible="true" densityAware="false"/>
+			<Button text="Log Off" type="Transparent" icon="sap-icon://log" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress"/>
+		</headerContent>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

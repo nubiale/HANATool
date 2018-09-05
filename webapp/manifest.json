@@ -1,0 +1,105 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "com.sap.ui.hanatool",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+  	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "com.sap.ui.hanatool.view.App",
+			"type": "XML"
+		},	
+		"handleValidation" : true,
+		"autoPrefixId": true,		
+		"dependencies": {
+			"minUI5Version": "1.48",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.48.1"
+				},
+				"sap.m": {
+					"minVersion": "1.48.1"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.48.1"
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.sap.ui.hanatool.i18n.i18n"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},		
+		"resources": {
+			"css": []
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.ui.hanatool.view",
+				"controlId": "app",
+				"clearTarget": false,
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"bypassed": {
+					"target": [
+						"Logon"
+					]
+				}
+			},
+			"targets": {
+				"Home": {
+					"viewPath": "com.sap.ui.hanatool.view",
+					"viewName": "Home",
+					"viewLevel": 2
+				},
+				"Logon": {
+					"viewPath": "com.sap.ui.hanatool.view",
+					"viewName": "Logon",
+					"viewLevel": 2
+				}
+			},
+			"routes": [{
+				"pattern": "Logon/:context:",
+				"name": "Logon",
+				"target": "Logon"
+			}, {
+				"pattern": "",
+				"name": "default",
+				"target": "Logon"
+			},  {
+				"pattern": "Home/:context:",
+				"name": "Home",
+				"target": "Home"
+			}]
+		}
+	}
+}
